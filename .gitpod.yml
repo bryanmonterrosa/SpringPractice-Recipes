@@ -1,0 +1,14 @@
+---
+# Configuration file that will be used when generating a new pod from gitpod.io
+
+vscode:
+  extensions:
+    - pivotal.vscode-boot-dev-pack
+    - pivotal.vscode-spring-boot
+    - redhat.java
+    - vscjava.vscode-java-debug
+    - vscjava.vscode-java-dependency
+    - vscjava.vscode-java-pack
+    - vscjava.vscode-java-test
+    - vscjava.vscode-maven
+    - vscjava.vscode-spring-initializr
