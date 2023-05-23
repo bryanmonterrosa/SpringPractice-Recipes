@@ -17,5 +17,6 @@ As of May 10 2023: Some extensions need to be on a specific version for some ext
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/bryanmonterrosa/SpringPractice-Recipes)
 
 ## Run:
-Run the main() method at:
-- src/main/java/com/alexquazar/SpringPracticeRecipes/SpringPracticeRecipesApplication.java
+```
+./mvnw spring-boot:run
+```
