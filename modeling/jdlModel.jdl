@@ -40,6 +40,10 @@ relationship OneToMany {
 	Recipe to Ingredient
 }
 
+relationship ManyToOne{
+	Ingredient to Recipe
+}
+
 relationship OneToOne {
 	Ingredient to UnitOfMeasure
 }
