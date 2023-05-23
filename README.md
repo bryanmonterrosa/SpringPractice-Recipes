@@ -4,7 +4,7 @@ Practice Spring Boot project(Unfinished). This is part of an assignment from the
 ---
  # For Gitpod:
 
-As of May 10 2023: Some extensions need to be on a specific version for some extensions to work properly while developing/debugging the application:
+As of May 10 2023: Some extensions need to be on a specific version in order to work properly while developing/debugging the application:
 
 1. Spring Boot Dashboard
 
