@@ -1,11 +1,14 @@
 package com.alexquazar.SpringPracticeRecipes.model;
 
+import java.util.Set;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -24,6 +27,9 @@ public class Recipe {
     // TODO add
     // private Difficulty difficulty;
     
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    private Set<Ingredient> ingredients;
+
     @Lob
     private Byte[] image;
 
