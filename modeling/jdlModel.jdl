@@ -51,3 +51,7 @@ relationship OneToOne {
 relationship ManyToMany{
 	Recipe to Category
 }
+
+relationship ManyToMany{
+	Category to Recipe
+}
