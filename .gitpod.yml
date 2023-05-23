@@ -3,9 +3,9 @@
 
 tasks:
   - before: sdk use java 17.0.7.fx-zulu
-    init: ./mvnw clean install -U -DskipTests
-    command: ./mvnw spring-boot:run
-    name: Run Recipies app
+    # init: ./mvnw clean install -U -DskipTests
+    # command: ./mvnw spring-boot:run
+    # name: Run Recipes app
 
 vscode:
   extensions:
