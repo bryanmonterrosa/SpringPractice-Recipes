@@ -2,7 +2,7 @@
 # Configuration file that will be used when generating a new pod from gitpod.io, this also sets up the IDE for further Dev.
 
 tasks:
-  - before: sdk use java 17.0.7.fx-zulu
+  - before: sdk default java 17.0.7.fx-zulu
     # init: ./mvnw clean install -U -DskipTests
     # command: ./mvnw spring-boot:run
     # name: Run Recipes app
