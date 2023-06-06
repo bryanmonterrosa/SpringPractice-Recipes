@@ -13,7 +13,7 @@ import org.springframework.test.annotation.DirtiesContext;
 import com.alexquazar.SpringPracticeRecipes.model.UnitOfMeasure;
 
 @DataJpaTest
-public class UnitOfMeasureRepositoryTest {
+public class UnitOfMeasureRepositoryIT {
 
     @Autowired
     UnitOfMeasureRepository unitOfMeasureRepository;
