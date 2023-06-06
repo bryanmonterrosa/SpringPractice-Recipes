@@ -1,13 +1,14 @@
-package com.alexquazar.springpractiverecipes;
+package com.alexquazar.SpringPracticeRecipes;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SpringpractiveRecipesApplicationTests {
+class SpringPracticeRecipesApplicationTests {
 
 	@Test
 	void contextLoads() {
+		
 	}
 
 }
