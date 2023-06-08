@@ -1,3 +1,4 @@
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/bryanmonterrosa/SpringPractice-Recipes/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/bryanmonterrosa/SpringPractice-Recipes/tree/main)
 # SpringPractice-Recipes
 Practice Spring Boot project(Unfinished). This is part of an assignment from the Udemy Course: Spring Framework 5: Beginner to Guru and https://github.com/springframeworkguru/spring5-recipe-app
 
