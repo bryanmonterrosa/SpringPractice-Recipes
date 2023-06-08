@@ -129,17 +129,21 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
                         """);
         guacRecipe.setNotes(guacNotes);
 
-        guacRecipe.getIngredients().add(new Ingredient("Ripe avocados", new BigDecimal(3), eachUom));
-        guacRecipe.getIngredients().add(new Ingredient("Lime or Lemon Juice", new BigDecimal(2), tableSpoonUom));
-        guacRecipe.getIngredients().add(new Ingredient("Salt", new BigDecimal(1), teaSpoonUom));
-        guacRecipe.getIngredients().add(new Ingredient("Diced roma tomatoes", new BigDecimal(2), eachUom));
-        guacRecipe.getIngredients().add(new Ingredient("Diced Onion", new BigDecimal(0.5), cupsUom));
-        guacRecipe.getIngredients().add(new Ingredient("Chopped Fresh Cilantro", new BigDecimal(3), tableSpoonUom));
-        guacRecipe.getIngredients().add(new Ingredient("Minced Garlic", new BigDecimal(1), teaSpoonUom));
-        guacRecipe.getIngredients().add(new Ingredient("Ground cayenne pepper", new BigDecimal(1), pinchUom));
+        guacRecipe.addIngredient(new Ingredient("Ripe avocados", new BigDecimal(3), eachUom));
+        guacRecipe.addIngredient(new Ingredient("Lime or Lemon Juice", new BigDecimal(2), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("Salt", new BigDecimal(1), teaSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("Diced roma tomatoes", new BigDecimal(2), eachUom));
+        guacRecipe.addIngredient(new Ingredient("Diced Onion", new BigDecimal(0.5), cupsUom));
+        guacRecipe.addIngredient(new Ingredient("Chopped Fresh Cilantro", new BigDecimal(3), tableSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("Minced Garlic", new BigDecimal(1), teaSpoonUom));
+        guacRecipe.addIngredient(new Ingredient("Ground cayenne pepper", new BigDecimal(1), pinchUom));
 
         guacRecipe.getCategories().add(americanCategory);
         guacRecipe.getCategories().add(mexicanCategory);
+
+        guacRecipe.setUrl("https://www.allrecipes.com/recipe/14231/guacamole/");
+        guacRecipe.setServings(4);
+        guacRecipe.setSource("allrecipes");
 
         // add to return list
         recipes.add(guacRecipe);
@@ -172,20 +176,23 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 
         tacosRecipe.setNotes(tacoNotes);
 
-        tacosRecipe.getIngredients().add(new Ingredient("Cumin", new BigDecimal(1), teaSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Dried Mexican oregano", new BigDecimal(1), teaSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Sazón seasoning", new BigDecimal(1), teaSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Garlic powder", new BigDecimal(1), teaSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Salt", new BigDecimal(1), teaSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Cayenne pepper", new BigDecimal(.25), teaSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Lime or Lemon Juice", new BigDecimal(.25), cupsUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Olive oil", new BigDecimal(1), teaSpoonUom));
-        tacosRecipe.getIngredients()
-                .add(new Ingredient("Skinless, boneless chicken thighs", new BigDecimal(4), tableSpoonUom));
-        tacosRecipe.getIngredients().add(new Ingredient("Package corn tortillas", new BigDecimal(1), eachUom));
+        tacosRecipe.addIngredient(new Ingredient("Cumin", new BigDecimal(1), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Dried Mexican oregano", new BigDecimal(1), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Sazón seasoning", new BigDecimal(1), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Garlic powder", new BigDecimal(1), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Salt", new BigDecimal(1), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Cayenne pepper", new BigDecimal(.25), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Lime or Lemon Juice", new BigDecimal(.25), cupsUom));
+        tacosRecipe.addIngredient(new Ingredient("Olive oil", new BigDecimal(1), teaSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Skinless, boneless chicken thighs", new BigDecimal(4), tableSpoonUom));
+        tacosRecipe.addIngredient(new Ingredient("Package corn tortillas", new BigDecimal(1), eachUom));
 
         tacosRecipe.getCategories().add(americanCategory);
         tacosRecipe.getCategories().add(mexicanCategory);
+
+        tacosRecipe.setUrl("https://www.allrecipes.com/recipe/269262/baja-grilled-chicken-tacos/");
+        tacosRecipe.setServings(4);
+        tacosRecipe.setSource("allrecipes");
 
         recipes.add(tacosRecipe);
         return recipes;
