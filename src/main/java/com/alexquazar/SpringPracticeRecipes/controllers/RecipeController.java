@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.alexquazar.SpringPracticeRecipes.commands.RecipeCommand;
 import com.alexquazar.SpringPracticeRecipes.services.RecipeService;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Controller
 public class RecipeController {
 
@@ -44,5 +46,14 @@ public class RecipeController {
         RecipeCommand savedCommand = recipeService.saveRecipeCommand(command);
 
         return "redirect:/recipe/" + savedCommand.getId() + "/show";
+    }
+
+    @GetMapping("recipe/{id}/delete")
+    public String deleteById(@PathVariable String id){
+
+        log.debug("Deleting id: " + id);
+
+        recipeService.deleteById(Long.valueOf(id));
+        return "redirect:/";
     }
 }
