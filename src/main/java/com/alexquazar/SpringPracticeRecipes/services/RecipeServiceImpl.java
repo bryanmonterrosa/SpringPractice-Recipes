@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.alexquazar.SpringPracticeRecipes.commands.RecipeCommand;
 import com.alexquazar.SpringPracticeRecipes.converters.RecipeCommandToRecipe;
 import com.alexquazar.SpringPracticeRecipes.converters.RecipeToRecipeCommand;
+import com.alexquazar.SpringPracticeRecipes.exceptions.NotFoundException;
 import com.alexquazar.SpringPracticeRecipes.model.Recipe;
 import com.alexquazar.SpringPracticeRecipes.repositories.RecipeRepository;
 
@@ -42,7 +43,8 @@ public class RecipeServiceImpl implements RecipeService {
     public Recipe findById(Long l) {
         Optional<Recipe> recipeOptional = recipeRepository.findById(l);
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found!");
+            // throw new RuntimeException("Recipe Not Found!");
+            throw new NotFoundException("Recipe Not Found!");
         }
 
         return recipeOptional.get();

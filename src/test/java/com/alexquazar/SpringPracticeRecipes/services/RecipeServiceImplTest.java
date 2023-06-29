@@ -2,6 +2,7 @@ package com.alexquazar.SpringPracticeRecipes.services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.Mockito.never;
@@ -21,6 +22,7 @@ import org.mockito.MockitoAnnotations;
 import com.alexquazar.SpringPracticeRecipes.commands.RecipeCommand;
 import com.alexquazar.SpringPracticeRecipes.converters.RecipeCommandToRecipe;
 import com.alexquazar.SpringPracticeRecipes.converters.RecipeToRecipeCommand;
+import com.alexquazar.SpringPracticeRecipes.exceptions.NotFoundException;
 import com.alexquazar.SpringPracticeRecipes.model.Recipe;
 import com.alexquazar.SpringPracticeRecipes.repositories.RecipeRepository;
 
@@ -74,6 +76,19 @@ public class RecipeServiceImplTest {
 
     }
 
+    @Test()
+    public void getRecipeByIdTestNotFound() throws Exception {
+
+        assertThrows(NotFoundException.class, () -> {
+            Optional<Recipe> recipeOptional = Optional.empty();
+
+            when(recipeRepository.findById(anyLong())).thenReturn(recipeOptional);
+
+            Recipe recipeReturned = recipeService.findById(1L);
+        });
+        // should go boom
+    }
+
     @Test
     public void getRecipeCommandByIdTest() throws Exception {
         Recipe recipe = new Recipe();
@@ -111,17 +126,17 @@ public class RecipeServiceImplTest {
     }
 
     @Test
-    public void testDeleteById() throws Exception{
+    public void testDeleteById() throws Exception {
 
-        //given
+        // given
         Long idToDelete = Long.valueOf(2L);
-        
-        //when
+
+        // when
         recipeService.deleteById(idToDelete);
 
-        //no 'when', since method has void return type
+        // no 'when', since method has void return type
 
-        //then
+        // then
         verify(recipeRepository, times(1)).deleteById(anyLong());
     }
 
