@@ -42,9 +42,9 @@ public class RecipeController {
     }
 
     @GetMapping("/recipe/{id}/update")
-    public String updateRecipe(@PathVariable String id, Model model){
+    public String updateRecipe(@PathVariable String id, Model model) {
         model.addAttribute("recipe", recipeService.findCommandById(Long.valueOf(id)));
-        return  "recipe/recipeform";
+        return "recipe/recipeform";
     }
 
     @PostMapping("/recipe/")
@@ -55,7 +55,7 @@ public class RecipeController {
     }
 
     @GetMapping("recipe/{id}/delete")
-    public String deleteById(@PathVariable String id){
+    public String deleteById(@PathVariable String id) {
 
         log.debug("Deleting id: " + id);
 
@@ -65,10 +65,16 @@ public class RecipeController {
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(NotFoundException.class)
-    public ModelAndView handleNotFound(){
+    public ModelAndView handleNotFound(Exception exception) {
         log.error("Handling not found exception");
+        log.error(exception.getMessage());
+
+        
         ModelAndView modelAndView = new ModelAndView();
+
         modelAndView.setViewName("404error");
+        modelAndView.addObject("exception", exception);
+
         return modelAndView;
     }
 }
