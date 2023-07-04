@@ -1,10 +1,10 @@
 ---
 # Configuration file that will be used when generating a new pod from gitpod.io, this also sets up the IDE for further Dev.
+image: gitpod/workspace-java-17:2023-05-08-21-16-55
 
-tasks:    
-  - name: 🛠️ Set up Java and Run app
+tasks:
+  - name: 🛠️ Run app
     command: |
-      sdk default java 17.0.7.fx-zulu
       # ./mvnw clean install -U -DskipTests
       # ./mvnw spring-boot:run
 
