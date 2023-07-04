@@ -51,7 +51,7 @@ public class RecipeController {
         return "recipe/recipeform";
     }
 
-    @PostMapping("recipe")
+    @PostMapping({"recipe","/recipe","/recipe/"})
     public String saveOrUpdate(@Valid @ModelAttribute("recipe") RecipeCommand command, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
