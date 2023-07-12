@@ -1,4 +1,7 @@
 version: 2.1
+orbs:
+  codecov: codecov/codecov@3
+
 jobs:
   build:
     docker:
@@ -26,7 +29,7 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
  
-      - run: mvn install -DskipTests
+      - run: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
  
       - run: mvn dependency:go-offline
  
@@ -36,10 +39,6 @@ jobs:
           key: v1-dependencies-{{ checksum "pom.xml" }}
  
       # run tests!
-      - run: mvn integration-test cobertura:cobertura
+      - run: mvn integration-test 
       
-      - store_test_results:
-          path: target/surefire-reports
-      
-    orbs:
-        codecov/codecov@3.2.4
+      - codecov/upload
